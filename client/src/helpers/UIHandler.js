@@ -6,13 +6,13 @@ export default class UIHandler {
         this.zoneHandler = new ZoneHandler(scene);
 
         this.buildZones = () => {
-            //render dropzone and its outline
+
             scene.dropZone = this.zoneHandler.renderZone(470, 500);
             this.zoneHandler.renderOutline(scene.dropZone);
         }
 
         this.buildPlayerAreas = () => {
-            //create outlines for hand areas, user interface, and player text
+
             scene.playerHandArea = scene.add.rectangle(470, 860, 850, 230);
             scene.playerHandArea.setStrokeStyle(4, 0xff69b4);
             scene.playerDeckArea = scene.add.rectangle(1000, 860, 155, 215);

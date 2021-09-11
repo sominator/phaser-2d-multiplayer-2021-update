@@ -14,7 +14,6 @@ export default class Game extends Phaser.Scene {
 
     preload() {
 
-        //preload assets for game use
         this.load.image('cyanCardBack', 'src/assets/CyanCardBack.png');
         this.load.image('magentaCardBack', 'src/assets/MagentaCardBack.png');
         this.load.image('cyanBoolean', 'src/assets/Cyan_Boolean3x.png');

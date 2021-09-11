@@ -1,6 +1,5 @@
 export default class GameHandler {
     constructor(scene) {
-        //initialize game variables
         this.gameState = "Initializing";
         this.isMyTurn = false;
         this.playerDeck = [];

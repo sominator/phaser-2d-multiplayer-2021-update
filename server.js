@@ -1,21 +1,22 @@
 const server = require('express')();
 const http = require('http').createServer(server);
-//const cors = require('cors');
-//const path = require('path');
-//const serveStatic = require('serve-static');
+const cors = require('cors');
+const path = require('path');
+const serveStatic = require('serve-static');
 const shuffle = require('shuffle-array');
+let gameState = "Initializing";
 let players = {};
 let readyCheck = 0;
 
 const io = require("socket.io")(http, {
     cors: {
-        origin: "http://localhost:3000",
+        origin: "https://phaser-tabletop-card-game-2021.herokuapp.com",
         methods: ["GET", "POST"]
     }
 });
 
-//server.use(cors());
-//server.use(serveStatic(__dirname + "/client/dist"));
+server.use(cors());
+server.use(serveStatic(__dirname + "/client/dist"));
 
 io.on('connection', function (socket) {
     console.log('A user connected: ' + socket.id);
